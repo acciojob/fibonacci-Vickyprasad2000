@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-		<table style = "width:25%">
-			<tr>
-				<th>input</th>
-				<th>output</th>
-			</tr> 
-			<tr>
-					<td>fibonacci(1)</td>
-					<td style ="text-align:center">0</td>
-			</tr>
-			<tr>
-					<td>fibonacci(5)</td>
-					<td style ="text-align:center">3</td>
-			</tr>
-		</table>
+    <div class="container">
+        <h1>Fibonacci Number Calculator</h1>
+        <input type="number" id="inputNumber" min="0" placeholder="Enter a positive integer" />
+        <button onclick="calculateFibonacci()">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>

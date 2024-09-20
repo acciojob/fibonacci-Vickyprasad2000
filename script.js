@@ -1,21 +1,25 @@
-function fibonacci(num) {
-// your code here
-	let num1 = 0;
-	let num2 = 1;
-	let sum;
+function calculateFibonacci() {
+    const num = parseInt(document.getElementById("inputNumber").value);
+    const resultElement = document.getElementById("result");
 
-	if(num == 0){
-		return num1;
-	}else if(num == 1){
-		return num2;
-	}else {
-		for(let i=0;i<=num;i++){
-			sum = num1 + num2;
-			num1 = num2;
-			num2 = sum;
-		}
-		return sum;
-	}
+    if (isNaN(num) || num < 0) {
+        resultElement.textContent = "Please enter a valid positive integer.";
+        return;
+    }
+
+    const fibNum = fibonacci(num);
+    resultElement.textContent = `Fibonacci(${num}) = ${fibNum}`;
 }
 
-module.exports = fibonacci;
+function fibonacci(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+        const temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return b;
+}
